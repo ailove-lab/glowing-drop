@@ -112,12 +112,12 @@ init = function() {
   material_front = new THREE.MeshPhysicalMaterial({
     map: null,
     color: 0xDA751C,
-    metalness: 0.0,
+    metalness: 0.56,
     roughness: 0,
-    opacity: 0.5,
+    opacity: 0.61,
     side: THREE.FrontSide,
     transparent: true,
-    envMapIntensity: 5,
+    envMapIntensity: 3.5,
     premultipliedAlpha: true,
     envMap: cubeTexture
   });
@@ -126,10 +126,10 @@ init = function() {
     color: 0xDA751Cf,
     metalness: 1.0,
     roughness: 0,
-    opacity: 0.5,
+    opacity: 0.8,
     side: THREE.BackSide,
     transparent: true,
-    envMapIntensity: 5,
+    envMapIntensity: 1.0,
     premultipliedAlpha: true,
     envMap: cubeTexture
   });
