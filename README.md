@@ -1,2 +1,2 @@
-- [example](https://ailove-lab.github.io/glowing-drop/index.html)
-- [example](https://ailove-lab.github.io/glowing-drop/index.2.html)
+- [example_1](https://ailove-lab.github.io/glowing-drop/index.html)
+- [example_2](https://ailove-lab.github.io/glowing-drop/index.2.html)
