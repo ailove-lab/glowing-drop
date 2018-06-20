@@ -92,7 +92,7 @@ generate_particles = function() {
 };
 
 init = function() {
-  var background, cubeTexture, material_back, material_front, pointLight;
+  var background, cubeTexture, f, gui, i, j, len, m, material_back, material_front, n, pointLight, ref, results;
   camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1000);
   camera.position.z = 400;
   controls = new THREE.OrbitControls(camera);
@@ -140,7 +140,20 @@ init = function() {
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.body.appendChild(renderer.domElement);
-  return window.addEventListener('resize', onWindowResize, false);
+  window.addEventListener('resize', onWindowResize, false);
+  gui = new dat.GUI();
+  n = ["Front", "Back"];
+  ref = [material_front, material_back];
+  results = [];
+  for (i = j = 0, len = ref.length; j < len; i = ++j) {
+    m = ref[i];
+    f = gui.addFolder(n[i]);
+    f.add(m, "roughness", 0.0, 1.0, 0.01);
+    f.add(m, "metalness", 0.0, 1.0, 0.01);
+    f.add(m, "opacity", 0.0, 1.0, 0.01);
+    results.push(f.add(m, "envMapIntensity", -10.0, 10.0, 0.1));
+  }
+  return results;
 };
 
 onWindowResize = function() {

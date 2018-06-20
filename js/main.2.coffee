@@ -128,6 +128,7 @@ init = ->
         premultipliedAlpha: true
         envMap: cubeTexture
 
+
     obj_loader [material_back, material_front]
     # geometry = new THREE.SphereBufferGeometry 200, 10
     # mesh = new THREE.Mesh geometry, material
@@ -140,6 +141,17 @@ init = ->
 
     window.addEventListener 'resize', onWindowResize, false
 
+    gui = new dat.GUI()
+    n = ["Front", "Back"]
+    for m, i in [material_front, material_back]
+        f = gui.addFolder n[i]
+        f.add m, "roughness", 0.0, 1.0, 0.01
+        f.add m, "metalness", 0.0, 1.0, 0.01
+        f.add m, "opacity"  , 0.0, 1.0, 0.01
+        f.add m, "envMapIntensity", -10.0, 10.0, 0.1
+    
+    
+    
 onWindowResize = ->
     camera.aspect = window.innerWidth / window.innerHeight
     camera.updateProjectionMatrix()
