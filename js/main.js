@@ -86,7 +86,7 @@ init = function() {
     glowSpr = new THREE.Sprite(glowMat);
     glowSpr.position.set(rr(), rr(), rr());
     glowSpr.position.normalize();
-    glowSpr.position.multiplyScalar(500.0);
+    glowSpr.position.multiplyScalar(400.0 + Math.rnadom() * 200.0);
     glowSpr.scale.set(s, s, 1.0);
     scene.add(glowSpr);
   }
