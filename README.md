@@ -1,1 +1,1 @@
-- [example](https://ailove-lab.github.io/glowing-drop/)
+- [example](https://ailove-lab.github.io/glowing-drop/index.html)
